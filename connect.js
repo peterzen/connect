@@ -34,14 +34,14 @@ this.TrezorConnect = (function () {
 
     var DISABLE_LOGIN_BUTTONS = window.TREZOR_DISABLE_LOGIN_BUTTONS || false;
     var CHROME_URL = window.TREZOR_CHROME_URL || './chrome/wrapper.html';
-    var POPUP_URL = window.TREZOR_POPUP_URL || 'https://connect.trezor.io/1/popup/popup.html';
-    var POPUP_PATH = window.TREZOR_POPUP_PATH || 'https://connect.trezor.io/1';
-    var POPUP_ORIGIN = window.TREZOR_POPUP_ORIGIN || 'https://connect.trezor.io';
+    var POPUP_URL = window.TREZOR_POPUP_URL || 'http://localhost:8000/1/popup/popup.html';
+    var POPUP_PATH = window.TREZOR_POPUP_PATH || 'http://localhost:8000/1';
+    var POPUP_ORIGIN = window.TREZOR_POPUP_ORIGIN || 'http://localhost:8100';
 
-    var INSIGHT_URLS = window.TREZOR_INSIGHT_URLS || 
+    var INSIGHT_URLS = window.TREZOR_INSIGHT_URLS ||
         [
-            'https://bitcore1.trezor.io/api/',
-            'https://bitcore3.trezor.io/api/',
+            'http://localhost:8200/api/',
+            'http://localhost:8200/api/',
         ];
 
     var POPUP_INIT_TIMEOUT = 15000;
@@ -292,7 +292,7 @@ this.TrezorConnect = (function () {
         /**
          * Sign a message
          *
-         * @param {string|array} path  
+         * @param {string|array} path
          * @param {string} message to sign (ascii)
          * @param {string|function(SignMessageResult)} callback
          * @param {?string} opt_coin - (optional) name of coin (default Bitcoin)
