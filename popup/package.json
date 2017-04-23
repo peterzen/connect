@@ -1,11 +1,11 @@
 {
-  "name": "trezor-connect",
+  "name": "trezor-connect-decred",
   "version": "1.0.0",
-  "description": "High-level interface for TREZOR hardware wallet.",
+  "description": "High-level interface for TREZOR hardware wallet - Decred fork",
   "main": "popup.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/trezor/connect.git"
+    "url": "https://github.com/peterzen/connect.git"
   },
   "author": "SatoshiLabs <http://satoshilabs.com>",
   "license": "GPL-3.0+",
@@ -34,7 +34,7 @@
   "dependencies": {
     "bip32-utils": "^0.6.2",
     "bip44-constants": "^2.3.0",
-    "bitcoinjs-lib-zcash": "^2.3.1",
+    "bitcoinjs-lib-decred": "https://github.com/peterzen/bitcoinjs-lib-decred#v2.3.0-decred",
     "bowser": "^1.0.0",
     "cb-insight": "^0.1.0",
     "es6-promise": "^2.3.0",

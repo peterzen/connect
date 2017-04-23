@@ -8,15 +8,15 @@ import 'whatwg-fetch';
 import {Promise} from 'es6-promise';
 
 import bowser from 'bowser';
-import * as bitcoin from 'bitcoinjs-lib-zcash';
+import * as bitcoin from 'bitcoinjs-lib-decred';
 import * as trezor from 'trezor.js';
 import * as hd from 'hd-wallet';
 
 var bip44 = require('bip44-constants')
 var semvercmp = require('semver-compare');
 
-const NETWORK = bitcoin.networks.bitcoin;
-const COIN_NAME = 'Bitcoin';
+const NETWORK = bitcoin.networks.decred;
+const COIN_NAME = 'Decred';
 const SCRIPT_TYPES = {
     [NETWORK.pubKeyHash]: 'PAYTOADDRESS',
     [NETWORK.scriptHash]: 'PAYTOSCRIPTHASH'
@@ -473,7 +473,7 @@ function serializePath(path) {
 }
 
 /*
- * Fresh address 
+ * Fresh address
  */
 
 function getAccountByDescription(description) {
@@ -1608,7 +1608,7 @@ function showSelectionFees(device, transactions) {
     let components = transactions.map((transactionFeeInfo, i) => {
         let feeNameObj = '';
         if (transactionFeeInfo.name === 'Normal') {
-            feeNameObj = 
+            feeNameObj =
                 `
                 <span class="fee-name-normal">${transactionFeeInfo.name}</span>
                 <span class="fee-name-subtitle">recommended</span>
@@ -1875,7 +1875,7 @@ function formatAmount(n) {
 function formatTime(n) {
     let hours = Math.floor(n / 60);
     let minutes = n % 60;
-    
+
     let res = '';
     if (hours != 0) {
         res += hours + ' hour';
